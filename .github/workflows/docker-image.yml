@@ -16,5 +16,5 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: |
-      docker build ./python --tag pythonTest:$(date +%s)
+      docker build ./python/dockerfile --tag pythonTest:$(date +%s)
       docker run pythonTest
