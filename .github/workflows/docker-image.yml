@@ -12,11 +12,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
-steps:
-  - uses: actions/checkout@v4
+    steps: 
+    - uses: actions/checkout@v4
     
-  - name: Build the Docker image then run the Docker container and save output to a file
-    run: |
-      docker build ./python --tag pythonTest:$(date +%s)
-      docker run pythonTest ./python > output.txt
-      cat output.txt
+    - name: Build the Docker image then run the Docker container and save output to a file
+      run: |
+        docker build ./python --tag pythonTest:$(date +%s)
+        docker run pythonTest ./python > output.txt
+        cat output.txt
