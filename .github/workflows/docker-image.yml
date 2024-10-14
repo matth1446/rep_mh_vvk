@@ -17,6 +17,6 @@ jobs:
     
     - name: Build the Docker image then run the Docker container and save output to a file
       run: |
-        docker build ./python --tag pythonTest:$(date +%s)
-        docker run pythonTest ./python > output.txt
+        docker build ./python --tag pythontest
+        docker run pythontest ./python > output.txt
         cat output.txt
