@@ -17,7 +17,7 @@ def test(n):
     for i in range(n):
         if not runAlea():
             j = j+1
-        if i%100000 == 0 and i>0:
+        #if i%100000 == 0 and i>0:
             #print("\nresultats partiels :\ntours :{}\nerreur : {}\ntaux : {}".format(i,j,j/i))
     return j/n
     
