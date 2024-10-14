@@ -14,9 +14,13 @@ def runAlea():
 def test(n):
     j = 0
     k = 0
-    while k*100000 <n:
-        for i in range(100000):
-            if not runAlea():
-                j = j+1
-        k = k+1
-        print("\nresultats partiels :\ntours :{}\nerreur : {}\ntaux : {}".format(k*100000,j,j/(k*100000)))
+    for i in range(n):
+        if not runAlea():
+            j = j+1
+        if i%100000 == 0 and i>0:
+            print("\nresultats partiels :\ntours :{}\nerreur : {}\ntaux : {}".format(i,j,j/i))
+    return j/n
+    
+if __name__ == "__main__" : 
+    res = test(1000000)
+    print("x+(y+z) == (x+y)+z approximately {}% of cases".format(res*100))
