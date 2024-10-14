@@ -12,7 +12,7 @@ L'environnement utilisé pour la compilation et le calcul en python est décrit 
 
 ### Résultat obtenu
 
-Le programme donne des résultat qui oscillent entre 75,5% et 75,8% d'erreur
+Le programme donne des résultat qui oscillent entre 75,5% et 75,8% de réussite
 
 ### Reproduction
 
