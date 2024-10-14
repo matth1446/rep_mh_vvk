@@ -18,9 +18,9 @@ def test(n):
         if not runAlea():
             j = j+1
         if i%100000 == 0 and i>0:
-            print("\nresultats partiels :\ntours :{}\nerreur : {}\ntaux : {}".format(i,j,j/i))
+            #print("\nresultats partiels :\ntours :{}\nerreur : {}\ntaux : {}".format(i,j,j/i))
     return j/n
     
 if __name__ == "__main__" : 
     res = test(1000000)
-    print("x+(y+z) == (x+y)+z approximately {}% of cases".format((1-res)*100))
+    print("x+(y+z) == (x+y)+z {}% of cases".format((1-res)*100))
