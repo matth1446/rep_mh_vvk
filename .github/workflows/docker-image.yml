@@ -15,20 +15,23 @@ jobs:
     steps: 
     - uses: actions/checkout@v4
     
-    - name: Build the Docker image
+    - name: Build the Docker image and run pythonTest
       run: |
         docker build ./python --tag pythontest
-        
-    - name: Run the Docker container and save output to a file
-      run : |
         docker run pythontest > output.txt
         cat output.txt
+
+    - name: Build the Docker image and run bankingTest
+      run: |
+        docker build ./banking --tag bankingtest
+        docker run bankingtest > output_banking.txt
+        cat output_banking.txt
 
     - name: Add, commit, and push the file with the results
       run : |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add output.txt
+        git add output.txt output_banking.txt
         git commit -m "add result"
         
     - name: Push changes
