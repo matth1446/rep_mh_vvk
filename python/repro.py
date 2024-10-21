@@ -23,4 +23,4 @@ def test(n):
     
 if __name__ == "__main__" : 
     res = test(1000000)
-    print("x+(y+z) == (x+y)+z {}% of cases".format((1-res)*100))
+    print(round((1-res)*100,2))
