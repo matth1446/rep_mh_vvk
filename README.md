@@ -53,4 +53,6 @@ On imagine que la variabilité peut être due à :
 - Le compilateur
 - La machine (processeur, OS)
 - Le langage
+- Façon de générer le hasard (cf. plusieurs manières de tirer un nombre flottant entre 1 et 50)
+- Expérience réalisée (ici on a fait l'associativité, mais est-ce que ça fonctionnerait avec une autre propriété et dans quelle mesure ?)
 
