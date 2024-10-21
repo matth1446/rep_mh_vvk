@@ -2,9 +2,9 @@ name: repro tp2
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" , "modif", "modif2"]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main" , "modif", "modif2"]
 
 jobs:
 
@@ -18,20 +18,20 @@ jobs:
     - name: Build the Docker image and run pythonTest
       run: |
         docker build ./python --tag pythontest
-        docker run pythontest > output.txt
-        cat output.txt
+        docker run pythontest > answer_associativity.txt
+        cat answer_associativity.txt
 
     - name: Build the Docker image and run bankingTest
       run: |
         docker build ./banking --tag bankingtest
-        docker run bankingtest > output_banking.txt
-        cat output_banking.txt
+        docker run bankingtest > answer_banking.txt
+        cat answer_banking.txt
 
     - name: Add, commit, and push the file with the results
       run : |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add output.txt output_banking.txt
+        git add answer_associativity.txt answer_banking.txt
         git commit -m "add result"
         
     - name: Push changes
