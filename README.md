@@ -42,3 +42,15 @@ Pour reproduire le test de l'associativité x(y+z) == (x+y)+z sur Scratch, suivr
 
 Note : il est possible de changer le nombre de générations de triplettes générées avec le bloc "set nbRep to ...". nboktemoin est une variable qui permet de montrer l'avancer du calcul (elle va de 0 au nombre de nbRep défini).
 
+# Variables impactantes imaginées
+
+On imagine que la variabilité peut être due à :
+- La plage de génération des nombres aléatoire
+- Le type de ces nombres aléatoires
+- Le nombre de chiffres après la virgule
+- Le nombre de répétition
+- La graine du hasard
+- Le compilateur
+- La machine (processeur, OS)
+- Le langage
+
