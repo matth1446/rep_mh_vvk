@@ -6,9 +6,9 @@ def testTrans(x,y,z):
     return a+z==x+b
     
 def runAlea():
-    x = random() * randint(0,10000000000)
-    y = random() * randint(0,10000000000)
-    z = random() * randint(0,10000000000)
+    x = random() * randint(0,10)
+    y = random() * randint(0,10)
+    z = random() * randint(0,10)
     return testTrans(x,y,z)
     
 def test(n):
