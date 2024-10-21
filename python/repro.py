@@ -26,11 +26,12 @@ def test(n):
 
 
 if __name__ == "__main__":
-    taux = []
-    for i in range(100):
-        res = test(100)
-        taux.append(res)
-    print("x+(y+z) == (x+y)+z approximately {}% of cases".format((1 - res) * 100))
-    print("Taux d'erreur :", taux)
-    print("Taux d'erreur max :", max(taux))
-    print("Taux d'erreur min :", min(taux))
+    print(round((1-test(100))*100,2)) #for standard file : number between 0 and 100 approximate to 2 numbers after the coma
+    # taux = []
+    # for i in range(100):
+    #     res = test(100)
+    #     taux.append(res)
+    # print("x+(y+z) == (x+y)+z approximately {}% of cases".format((1 - res) * 100))
+    # print("Taux d'erreur :", taux)
+    # print("Taux d'erreur max :", max(taux))
+    # print("Taux d'erreur min :", min(taux))
