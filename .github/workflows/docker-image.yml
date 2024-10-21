@@ -2,9 +2,9 @@ name: repro tp2
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" , "modif"]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main" , "modif"]
 
 jobs:
 
