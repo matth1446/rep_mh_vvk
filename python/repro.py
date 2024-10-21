@@ -8,9 +8,9 @@ def testTrans(x, y, z):
 
 
 def runAlea():
-    x = random() * randint(0, 10000000000)
-    y = random() * randint(0, 10000000000)
-    z = random() * randint(0, 10000000000)
+    x = 0.1 * randint(0, 50)
+    y = 0.1 * randint(0, 50)
+    z = 0.1 * randint(0, 50)
     return testTrans(x, y, z)
 
 
@@ -26,7 +26,7 @@ def test(n):
 
 
 if __name__ == "__main__":
-    print(round((1-test(100))*100,2)) #for standard file : number between 0 and 100 approximate to 2 numbers after the coma
+    print(round((1-test(10000))*100,2)) #for standard file : number between 0 and 100 approximate to 2 numbers after the coma
     # taux = []
     # for i in range(100):
     #     res = test(100)
