@@ -1,7 +1,1 @@
-{'operation1': '(x + y) + z', 'operation2': 'x + (y + z)'}
-next_rep
-next_rep
-next_rep
-next_rep
-next_rep
-78.16
+78.52
