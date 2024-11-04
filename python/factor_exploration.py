@@ -82,9 +82,7 @@ file.write("idExperiment;op1;op2;repetitions;randomRange;floatingNumbers;randomS
 i = 0
 # Loop through all combinations of operations and repetitions
 for op in operations:
-    print(op)
     for reps in repetitions_list:
-        print("next_rep")
         for ran in range_random:
             for flo in floating_number:
                 for strat in random_strategy:
