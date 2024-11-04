@@ -1,4 +1,5 @@
 import random
+import statistics as st
 
 # operation1 : première opération qui sera calculée (permet de manipuler le nombre d'opérandes, l'opérande qui sera testé, etc.)
 # operation2 : deuxième opération qui sera calculée
@@ -41,21 +42,24 @@ def check_property(operation1, operation2, repetitions, range_random, floating_n
 
     return correct_count/repetitions
 
+def sdProperty(operation1, operation2, repetitions, range_random, floating_nbs,random_strat):
+    return st.stdev([check_property(operation1, operation2, repetitions, range_random, floating_nbs,random_strat) for i in range(10)])
+
 # Define possible combinations of operations and repetition counts
 operations = [
     {"operation1": "(x + y) + z", "operation2": "x + (y + z)"},  # Associativity (addition)
-    {"operation1": "x + y", "operation2": "y + x"},              # Commutativity (addition)
-    {"operation1": "(x * y) * z", "operation2": "x * (y * z)"},  # Associativity (multiplication)
-    {"operation1": "x * y", "operation2": "y * x"},              # Commutativity (multiplication)
-    {"operation1": "x - (y - z)", "operation2": "(x - y) - z"},  # Associativity (subtraction)
-    {"operation1": "(x / y) / z", "operation2": "x / (y / z)"},  # Associativity (division)
-    {"operation1": "x * (y / z)", "operation2": "(x * y) / z"},  # Combination of operations
-    {"operation1": "((x + y) + z) + w", "operation2": "(x + (y + z)) + w"},  # Addition with 4 operands
-    {"operation1": "(x * (y + z))", "operation2": "(x * y) + (x * z)"},  # Distributivity (multiplication over addition)
-    {"operation1": "(x + y) * (z + w)", "operation2": "x * z + x * w + y * z + y * w"},  # Distribution over multiple terms
-    {"operation1": "x ** (y ** z)", "operation2": "(x ** y) ** z"},  # Power associativity
-    {"operation1": "(x - y) * (z + w)", "operation2": "(x * z - y * w)"},  # Combination of addition and subtraction
-    {"operation1": "((x * y) / z) + ((a * b) / c)", "operation2": "(x / z) * (y + (a / c) * b)"},  # Combination of division and multiplication
+    #{"operation1": "x + y", "operation2": "y + x"},              # Commutativity (addition)
+    #{"operation1": "(x * y) * z", "operation2": "x * (y * z)"},  # Associativity (multiplication)
+    #{"operation1": "x * y", "operation2": "y * x"},              # Commutativity (multiplication)
+    #{"operation1": "x - (y - z)", "operation2": "(x - y) - z"},  # Associativity (subtraction)
+    #{"operation1": "(x / y) / z", "operation2": "x / (y / z)"},  # Associativity (division)
+    #{"operation1": "x * (y / z)", "operation2": "(x * y) / z"},  # Combination of operations
+    #{"operation1": "((x + y) + z) + w", "operation2": "(x + (y + z)) + w"},  # Addition with 4 operands
+    #{"operation1": "(x * (y + z))", "operation2": "(x * y) + (x * z)"},  # Distributivity (multiplication over addition)
+    #{"operation1": "(x + y) * (z + w)", "operation2": "x * z + x * w + y * z + y * w"},  # Distribution over multiple terms
+    #{"operation1": "x ** (y ** z)", "operation2": "(x ** y) ** z"},  # Power associativity
+    #{"operation1": "(x - y) * (z + w)", "operation2": "(x * z - y * w)"},  # Combination of addition and subtraction
+    #{"operation1": "((x * y) / z) + ((a * b) / c)", "operation2": "(x / z) * (y + (a / c) * b)"},  # Combination of division and multiplication
 ]
 
 
@@ -80,12 +84,13 @@ i = 0
 for op in operations:
     print(op)
     for reps in repetitions_list:
+        print("next_rep")
         for ran in range_random:
             for flo in floating_number:
                 for strat in random_strategy:
                     try:
                         #print(f"\nChecking {op['operation1']} vs {op['operation2']} with {reps} repetitions:")
-                        file.write(";".join([str(i),op['operation1'],op['operation2'], str(reps),str(ran),str(flo),str(strat),str(check_property(op['operation1'], op['operation2'], reps,ran,flo,strat))])+"\n")
+                        file.write(";".join([str(i),op['operation1'],op['operation2'], str(reps),str(ran),str(flo),str(strat),str(check_property(op['operation1'], op['operation2'], reps,ran,flo,strat)), str(sdProperty(op['operation1'], op['operation2'], reps,ran,flo,strat))])+"\n")
                     except ZeroDivisionError:
                         pass
                         #file.write(";".join([str(i), op['operation1'], op['operation2'], str(reps), str(ran), str(flo), str(strat),"ZeroDivisionError"]) + "\n")
