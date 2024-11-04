@@ -1,1 +1,14 @@
-78.63
+{'operation1': '(x + y) + z', 'operation2': 'x + (y + z)'}
+{'operation1': 'x + y', 'operation2': 'y + x'}
+{'operation1': '(x * y) * z', 'operation2': 'x * (y * z)'}
+{'operation1': 'x * y', 'operation2': 'y * x'}
+{'operation1': 'x - (y - z)', 'operation2': '(x - y) - z'}
+{'operation1': '(x / y) / z', 'operation2': 'x / (y / z)'}
+{'operation1': 'x * (y / z)', 'operation2': '(x * y) / z'}
+{'operation1': '((x + y) + z) + w', 'operation2': '(x + (y + z)) + w'}
+{'operation1': '(x * (y + z))', 'operation2': '(x * y) + (x * z)'}
+{'operation1': '(x + y) * (z + w)', 'operation2': 'x * z + x * w + y * z + y * w'}
+{'operation1': 'x ** (y ** z)', 'operation2': '(x ** y) ** z'}
+{'operation1': '(x - y) * (z + w)', 'operation2': '(x * z - y * w)'}
+{'operation1': '((x * y) / z) + ((a * b) / c)', 'operation2': '(x / z) * (y + (a / c) * b)'}
+79.13
