@@ -88,10 +88,10 @@ for op in operations:
                         file.write(";".join([str(i),op['operation1'],op['operation2'], str(reps),str(ran),str(flo),str(strat),str(check_property(op['operation1'], op['operation2'], reps,ran,flo,strat))])+"\n")
                     except ZeroDivisionError:
                         pass
-                        file.write(";".join([str(i), op['operation1'], op['operation2'], str(reps), str(ran), str(flo), str(strat),"ZeroDivisionError"]) + "\n")
+                        #file.write(";".join([str(i), op['operation1'], op['operation2'], str(reps), str(ran), str(flo), str(strat),"ZeroDivisionError"]) + "\n")
                     except OverflowError:
                         pass
-                        file.write(";".join([str(i), op['operation1'], op['operation2'], str(reps), str(ran), str(flo), str(strat),"OverflowError"]) + "\n")
+                        #file.write(";".join([str(i), op['operation1'], op['operation2'], str(reps), str(ran), str(flo), str(strat),"OverflowError"]) + "\n")
                     finally:
                         i = i+1
 file.close()
